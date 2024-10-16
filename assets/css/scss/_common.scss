@@ -1,0 +1,827 @@
+@import 'variables';
+@import 'mixins';
+
+/* ==========================================================================
+   #Comments styles - start
+   ========================================================================== */
+
+.qodef-comment-holder {
+    @include qodefRelativeHolderLayout();
+    padding: 0;
+    box-sizing: border-box;
+
+    .qodef-comment-holder-inner {
+        padding: 64px 0 20px;
+    }
+	
+	.qodef-comment {
+		
+		&.qodef-pingback-comment {
+			
+			.qodef-comment-text {
+				padding: 0;
+			}
+		}
+	}
+
+    .qodef-comment-list {
+        list-style: none;
+        position: relative;
+        z-index: 150;
+        padding: 0;
+        margin: 0;
+
+        li {
+            @include qodefRelativeHolderLayout();
+            margin: 32px 0 0;
+            padding: 0 0 30px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        > li:first-child {
+            margin: 0;
+        }
+
+        .children {
+            padding: 0 0 0 81px;
+
+            li{
+                &:last-child{
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .qodef-comments-title {
+        margin-bottom: 39px;
+
+        > * {
+            margin: 0;
+        }
+    }
+
+    .qodef-comment-image {
+        position: relative;
+        display: block;
+        top: 10px;
+        left: 0;
+        width: 80px;
+        height: 80px;
+        float: left;
+
+        img {
+            display: block;
+            border-radius: 4em;
+        }
+    }
+
+    .qodef-comment-text {
+        padding: 0 0 0 108px;
+        min-height: 82px;
+
+        .qodef-comment-info {
+            @include qodefRelativeHolderLayout();
+            width: auto;
+            margin: 6px 0 7px;
+        }
+
+        .replay,
+        .comment-reply-link,
+        .comment-edit-link {
+            float: right;
+            margin-left: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            color: $default-heading-color;
+            font-family: $default-heading-font;
+
+            &:hover {
+                color: $first-main-color;
+            }
+        }
+
+        .qodef-reply-icon{
+            padding-right: 8px;
+        }
+
+        .qodef-comment-name {
+            float: left;
+            margin: 0;
+        }
+
+        .qodef-comment-date {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .qodef-text-holder p {
+            margin: 7px 0;
+        }
+
+        .comment-respond {
+            margin: 20px 0;
+
+            .comment-reply-title {
+                margin: 0 0 10px;
+                font-size: 14px;
+            }
+
+            .logged-in-as {
+                margin: 0 0 8px;
+            }
+        }
+
+        #cancel-comment-reply-link {
+            margin-left: 10px;
+            font-size: 12px;
+            color: $first-main-color;
+
+            &:hover {
+                color: $default-heading-color;
+            }
+        }
+	
+	    ul, ol {
+		    
+		    li {
+			    display: list-item;
+		    }
+	    }
+
+        li {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0 !important;
+        }
+    }
+}
+
+.qodef-comment-form {
+    padding: 0;
+    clear: both;
+    box-sizing: border-box;
+    
+    .qodef-comment-form-inner {
+        padding: 45px 0 78px;
+    }
+    
+    .comment-reply-title {
+        margin: 0 0 37px;
+    }
+    
+    .logged-in-as {
+        margin: 0 0 8px;
+    }
+}
+
+@include ipad-portrait {
+
+    .qodef-comment-holder {
+	    
+        .qodef-comment-list {
+	        
+            .children {
+                padding: 0 0 0 40px;
+            }
+        }
+    }
+}
+
+@include phone-landscape {
+	
+    .qodef-comment-holder {
+	    
+        .qodef-comment-list {
+	        
+            .children {
+                padding: 0;
+            }
+        }
+
+        .qodef-comment-text {
+	        
+            .qodef-comment-date,
+            .qodef-comment-name {
+                float: none;
+            }
+	        
+            .replay,
+            .comment-reply-link,
+            .comment-edit-link {
+                float: none;
+                margin: 0 10px 0 0;
+            }
+        }
+    }
+}
+
+@include phone-portrait {
+	
+    .qodef-comment-holder {
+
+        .qodef-comment-image {
+            float: none;
+        }
+
+        .qodef-comment-text {
+            padding: 20px 0 0;
+            min-height: inherit;
+        }
+    }
+}
+
+/* ==========================================================================
+   #Comments styles - end
+   ========================================================================== */
+
+#respond textarea,
+.qodef-style-form textarea,
+#respond input[type='text'],
+input[type='text'],
+input[type='email'],
+input[type='password'],
+.post-password-form input[type='password'] {
+	@extend %input-style;
+    color: #bebdbd;
+    font-family: $default-text-font;
+}
+
+.post-password-form input[type='password'] {
+	margin-top: 10px;
+}
+
+.wpcf7-form-control {
+	&.wpcf7-text,
+	&.wpcf7-number,
+	&.wpcf7-date,
+	&.wpcf7-textarea,
+	&.wpcf7-select,
+	&.wpcf7-quiz {
+		@extend %input-style;
+		
+		footer & {
+			margin: 0;
+		}
+	}
+}
+
+#submit_comment,
+.post-password-form input[type='submit'],
+input.wpcf7-form-control.wpcf7-submit {
+	@include qodefButtonDefaultStyle();
+	@include qodefButtonMediumParams();
+	@include qodefButtonSolidColor();
+	cursor: pointer;
+	
+	&:hover {
+		@include qodefButtonSolidHoverColor();
+	}
+}
+
+p.form-submit,
+.wpcf7-form p {
+	margin: 0;
+}
+
+#respond textarea,
+.qodef-style-form textarea,
+.wpcf7-form textarea {
+	display: block;
+	padding: 16px 18px;
+}
+
+.qodef-two-columns-form-without-space {
+	
+	.wpcf7-form .ajax-loader {
+		display: none;
+	}
+}
+/* ==========================================================================
+   #Comments styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Custom Contact Styles - begin
+   ========================================================================== */
+
+.qodef-footer-form{
+    input[type="email"],
+    input[type="submit"]{
+        padding: 11px 28px!important;
+    }
+
+    input[type="email"]{
+        background-color: #333;
+        border-color: #333;
+        color: #959595;
+
+        &:focus{
+            color: #fff;
+        }
+    }
+
+    .qodef-cf-submit-holder{
+        position: relative;
+
+        input[type="submit"]{
+            width: 100%;
+            margin: 7px 0 0;
+            font-size: 15px;
+            color: $default-heading-color;
+            background-color: #fff;
+            text-align: left;
+            font-weight: 700;
+            font-family: $default-heading-font;
+            line-height: 1.3em;
+            letter-spacing: 0;
+        }
+        i{
+            position: absolute;
+            font-size: 22px;
+            top: 56%;
+            right: 14px;
+            color: #050505;
+            @include qodefTransform(translateY(-50%));
+        }
+        .ajax-loader{
+            display: none!important;
+        }
+    }
+}
+
+.qodef-subscribe-form{
+    input[type="email"]{
+        width: calc(67% - 6px);
+        margin-right: 6px;
+        margin-bottom: 0;
+        padding: 9px 15px 11px;
+        background-color: #fff;
+        color: #959595;
+	    vertical-align: middle;
+    }
+    input[type="submit"]{
+        width: 33%;
+    }
+
+    .ajax-loader{
+        display: none!important;
+    }
+
+    @include phone-landscape{
+        input[type="email"]{
+            width: 100%;
+	        margin-bottom: 15px;
+	        margin-right: 0;
+        }
+        input[type="submit"]{
+            width: auto;
+        }
+    }
+}
+
+.qodef-contact-us{
+
+    input[type='text'],
+    input[type='email']{
+        width: calc(50% - 10px)!important;
+        display: inline-block!important;
+        color: #bebdbd;
+        background-color: #fff;
+    }
+
+    textarea{
+        color: #bebdbd!important;
+        background-color: #fff!important;
+    }
+
+    input[type='text']{
+        margin-right: 20px;
+    }
+
+    .ajax-loader{
+        display: none!important;
+    }
+
+    input[type='submit']{
+        margin: 0 auto;
+        width: auto;
+        display: block;
+    }
+
+}
+
+
+body div.wpcf7-response-output{
+
+    &.wpcf7-mail-sent-ng,
+    &.wpcf7-aborted,
+    &.wpcf7-mail-sent-ok,
+    &.wpcf7-validation-errors {
+        margin: 10px 0;
+        padding:13px 26px;
+        border-color: $first-main-color;
+        background-color: $first-main-color;
+        color: #fff;
+        font-size: 14px;
+        line-height: 16px;
+        font-family: $default-heading-font;
+        font-weight: 700;
+        border-radius: 0;
+    }
+
+}
+
+/* ==========================================================================
+   #Custom Contact Styles - begin
+   ========================================================================== */
+
+/* ==========================================================================
+   #Global Owl Slider - begin
+   ========================================================================== */
+.qodef-owl-slider {
+	visibility: hidden;
+	
+    .owl-stage-outer {
+        z-index: 1;
+    }
+	
+	&.qodef-slider-is-moving {
+		
+		.owl-item {
+			
+			.qodef-block-drag-link {
+				z-index: -1 !important;
+			}
+		}
+	}
+    
+    &.qodef-slider-has-both-nav {
+        
+        .owl-nav {
+            
+            .owl-prev,
+            .owl-next {
+                $pos: calc(-50% - 21px); // 21 is is half height of pagination control + top margin
+                @include qodefTransform(translateY($pos));
+            }
+        }
+    }
+	
+	.owl-nav {
+		
+		.owl-prev,
+		.owl-next {
+            background-color: #fff;
+            height: 56px;
+            width: 56px;
+			position: absolute;
+			top: 50%;
+			z-index: 3;
+			color: $default-heading-color;
+            text-align: center;
+			@include qodefTransform(translateY(-50%));
+			@include qodefTransition(color .3s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+			
+			&:hover {
+				color: $first-main-color;
+			}
+			
+			> span {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 22px;
+				line-height: 56px;
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+		
+		.owl-prev {
+			left: 0;
+		}
+		
+		.owl-next {
+			right: 0;
+		}
+	}
+	
+	.owl-dots {
+		text-align: center;
+		margin: 16px 0 0;
+		
+		.owl-dot {
+			display: inline-block;
+			vertical-align: middle;
+			
+			span {
+				display: inline-block;
+				vertical-align: middle;
+				width: 11px;
+				height: 11px;
+				margin: 0 7px;
+				border-radius: 50%;
+                background-color: #d8d8d8;
+				box-sizing: border-box;
+				@include qodefTransition(background-color .3s cubic-bezier(0.48, 0.19, 0.2, 0.86), border .3s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+			}
+			
+			&:hover,
+			&.active {
+				
+				span {
+					background-color: $default-heading-color;
+					border-color: $default-heading-color;
+				}
+			}
+		}
+	}
+	
+	.owl-carousel .owl-item img {
+		-webkit-transform: translateZ(0); //chrome text cut off fix
+	}
+
+
+    + .qodef-slider-thumbnail {
+        display: inline-block;
+        vertical-align: middle;
+        list-style: none;
+        margin: 20px -10px 0;
+
+        > .qodef-slider-thumbnail-item {
+            float: left;
+            padding: 0 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            line-height: 0;
+            img {
+                border: 2px solid transparent;
+                @include qodefTransition(border-color .3s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+            }
+
+            &.active {
+                img {
+                    border: 2px solid $first-main-color;
+                }
+            }
+        }
+
+        $thumbnail_columns_number: ('two', 'three', 'four', 'five', 'six');
+
+        @for $i from 0 to length($thumbnail_columns_number) {
+            &.qodef-slider-columns-#{nth($thumbnail_columns_number,$i+1)} {
+
+                .qodef-slider-thumbnail-item {
+                    width: 100% / ($i+2);
+
+                    @include ipad-landscape {
+                        width: 33.3333%;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+}
+/* ==========================================================================
+   #Global Owl Slider - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #404 styles - start
+   ========================================================================== */
+
+.error404 {
+
+    .qodef-wrapper {
+        padding: 0 !important;
+    }
+    
+    .qodef-content {
+        height: 100vh;
+	    @include ipad-landscape {
+		    margin-top: -70px !important; /* This is because header height is smaller than other headers height */
+	    }
+    }
+	
+	&.admin-bar {
+		
+		.qodef-content {
+			height: calc(100vh - 32px);
+		}
+	}
+
+    .qodef-content-inner {
+	    @include qodefTableLayout();
+    }
+
+    .qodef-page-not-found {
+	    @include qodefTableCellLayout();
+        padding: 0 20%;
+	    text-align: center;
+
+        .qodef-404-title {
+            margin: 0;
+        }
+	
+	    .qodef-404-subtitle {
+            margin: 17px 0 0 0;
+        }
+	    
+	    .qodef-404-text {
+            margin: 17px 22% 0;
+	    }
+
+        .searchform {
+            display: block;
+            margin: 41px auto 0;
+            max-width: 368px;
+
+            input,
+            button {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                padding: 0;
+                margin: 0;
+                float: left;
+                height: 54px;
+                font-family: inherit;
+                font-weight: inherit;
+                line-height: 52px;
+                border-radius: 0;
+                outline: 0;
+                -webkit-appearance: none;
+                box-sizing: border-box;
+            }
+
+            input {
+                width: calc(100% - 52px);
+                font-size: 16px;
+                padding: 0 10px 0 35px;
+                background-color: #fff;
+                border: 1px solid #e1e1e1;
+                color: #bebdbd;
+                border-right: 0;
+
+                @include qodefPlaceholder {
+                    color: inherit;
+                }
+            }
+
+            button {
+                width: 52px;
+                font-size: 22px;
+                color: #fff;
+                background-color: $first-main-color;
+                border: 0;
+                text-align: center;
+                cursor: pointer;
+                @include qodefTransition(color .3s cubic-bezier(0.48, 0.19, 0.2, 0.86), background-color .3s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+
+                &:hover {
+                    background-color: $default-heading-color;
+                }
+
+                span {
+                    display: block;
+                    line-height: inherit;
+
+                    &:before {
+                        display: block;
+                        line-height: inherit;
+                    }
+                }
+            }
+        }
+    }
+
+    @include ipad-portrait {
+
+        .qodef-page-not-found {
+            padding: 70px 30px 20px;
+	        .qodef-404-text {
+		        margin: 17px auto 0;
+	        }
+        }
+    }
+
+    @include ipad-portrait {
+
+        .qodef-page-not-found {
+            padding: 82px 0 20px;
+        }
+    }
+}
+
+/* ==========================================================================
+   #404 styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Back to Top styles - start
+   ========================================================================== */
+#qodef-back-to-top {
+    position: fixed;
+    width: 52px;
+    right: 25px;
+    bottom: 25px;
+    margin: 0;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+
+    &.off {
+        opacity: 0;
+        visibility: hidden;
+        @include qodefTransition(opacity 0.15s ease, visibility .0s .15s);
+    }
+
+    &.on {
+        opacity: 1;
+        visibility: visible;
+        @include qodefTransition(opacity 0.3s ease);
+    }
+
+    > span {
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 50px;
+        line-height: 47px;
+        font-size: 15px;
+        text-align: center;
+        color: #fff;
+        background-color: #ffbea5;
+        border: 1px solid #ffbea5;
+        border-radius: 50%;
+        overflow: hidden;
+        @include qodefTransition(color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out);
+
+        i {
+            @include qodefTransition(.15s ease .05s);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 19px;
+            left: 24px;
+            height: 0;
+            width: 0;
+            opacity: 0;
+            border: 1px solid $default-border-color;
+            @include qodefTransition(0.2s cubic-bezier(0.54, 0.13, 0, 1.43));
+        }
+
+        &:hover {
+            background-color: #ffab8a;
+            border: 1px solid #ffab8a;
+
+            &:after {
+                height: 12px;
+                opacity: 1;
+                @include qodefTransition(0.45s cubic-bezier(0.54, 0.13, 0, 1) .05s);
+            }
+
+            i {
+                @include qodefTransform(translateY(-5px));
+                @include qodefTransition(.2s cubic-bezier(1,-1.21, 0.25, 1));
+            }
+        }
+    }
+
+    span span {
+        display: block;
+        line-height: inherit;
+    }
+}
+/* ==========================================================================
+   #Back to Top styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Self Hosted Video styles - begin
+   ========================================================================== */
+.qodef-self-hosted-video-holder {
+	
+    .qodef-video-wrap {
+	
+	    .mejs-poster,
+        .mejs-container,
+        .mejs-overlay-play {
+            height: 100% !important; /*!important because of the inline style*/
+            width: 100% !important; /*!important because of the inline style*/
+        }
+    }
+}
+/* ==========================================================================
+   #Self Hosted Video styles - end
+   ========================================================================== */

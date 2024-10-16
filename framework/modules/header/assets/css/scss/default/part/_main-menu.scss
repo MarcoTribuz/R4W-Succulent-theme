@@ -1,0 +1,509 @@
+/* ==========================================================================
+   Header main menu style - begin
+   ========================================================================== */
+
+.qodef-main-menu {
+    @include qodefRelativeHolderLayout();
+    height: 100%;
+    width: auto;
+
+    ul {
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+
+        li {
+            position: relative;
+            display: inline-block;
+            float: left;
+            padding: 0;
+            margin: 0;
+
+            a {
+                font-size: 13px;
+                line-height: 24px;
+                font-family: $default-heading-font;
+                font-weight: 700;
+                color: #969696;
+
+                &:hover {
+                    color: $first-main-color;
+                }
+
+                i:before {
+                    margin: 0 7px 0 0;
+                }
+
+                .menu_icon_wrapper {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                .qodef-menu-featured-icon {
+                    position: relative;
+                    top: -4px;
+                    left: 5px;
+                    color: currentColor;
+                    font-size: 10px;
+                    margin: 0;
+
+                    &:before {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    > ul {
+        @include qodefRelativeHolderLayout();
+        height: 100%;
+
+        > li {
+            float: left;
+            height: 100%;
+            box-sizing: border-box;
+
+            > a {
+                @include qodefRelativeHolderLayout();
+                height: 100%;
+                padding: 0 2px;
+                font-family: $default-heading-font;
+                font-weight: 700;
+                color: #0f0f0f;
+                font-size: 15px;
+                line-height: 23px;
+                box-sizing: border-box;
+
+                > span.item_outer {
+                    position: relative;
+                    display: block;
+                    padding: 5px 22px 6px;
+                    box-sizing: border-box;
+                    top: 50%;
+                    @include qodefTransform(translateY(-50%));
+                    @media only screen and (min-width: $ipad-landscape-plus-pixel) and (max-width: $laptop-landscape) {
+                        padding: 5px 15px 6px;
+                    }
+                    @media only screen and (min-width: $ipad-landscape-plus-pixel) and (max-width: 1100px) {
+                        padding: 5px 10px 6px;
+                    }
+                    .item_text {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                }
+            }
+
+            &.qodef-active-item > a {
+                color: #fff;
+                .item_outer {
+                    background-color: $first-main-color;
+                }
+            }
+
+            &.has_sub {
+
+                > a .qodef-menu-arrow {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.qodef-light-header .qodef-page-header > div:not(.qodef-sticky-header):not(.fixed) {
+
+    .qodef-main-menu > ul > li {
+
+        > a {
+            color: $header-light-color;
+
+            &:hover {
+                color: $header-light-hover-color;
+            }
+        }
+
+        &.qodef-active-item > a {
+            color: $header-light-hover-color;
+        }
+    }
+}
+
+.qodef-dark-header .qodef-page-header > div:not(.qodef-sticky-header):not(.fixed) {
+
+    .qodef-main-menu > ul > li {
+
+        > a {
+            color: $header-dark-color;
+
+            &:hover {
+                color: $header-dark-color;
+            }
+        }
+
+        &.qodef-active-item > a {
+            color: $header-dark-color;
+        }
+    }
+}
+
+/* Narrow drop down styles
+   ========================================================================== */
+.qodef-drop-down {
+
+    .second {
+        position: absolute;
+        display: block;
+        left: -9px;
+        top: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        opacity: 0;
+        z-index: 10;
+        @include qodefTransition(top 0.15s ease-out);
+
+        &.qodef-drop-down-start {
+            visibility: visible;
+            overflow: visible;
+            opacity: 1;
+            @include qodefTransition(opacity 0.2s ease-out);
+        }
+
+        &.right {
+            right: 0;
+            left: auto;
+        }
+    
+        .inner {
+            position: relative;
+            display: block;
+            padding: 0;
+            margin: 0;
+            z-index: 997;
+            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.03);
+    
+            ul {
+        
+                li {
+                    display: block;
+                    float: none;
+                    height: auto;
+            
+                    .widget {
+                        width: 100%;
+                        margin: 0 !important;
+                    }
+            
+                    a {
+                        display: block;
+                        float: none;
+                        margin: 0;
+                        padding: 6px 32px;
+                
+                        .item_outer {
+                            position: relative;
+                            display: block;
+                            overflow: hidden;
+                            box-sizing: border-box;
+                            @include qodefTransition(padding .2s ease-in-out);
+                        }
+                    }
+            
+                    &.current-menu-ancestor > a,
+                    &.current-menu-item > a {
+                        color: $first-main-color;
+                
+                        .item_outer {
+
+                            &:before {
+                                left: 0;
+                            }
+                        }
+                    }
+            
+                    &.sub {
+                
+                        > a {
+                    
+                            .item_outer {
+                        
+                                &:after {
+                                    position: absolute;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    top: 1px;
+                                    right: 0;
+                                    content: '\35';
+                                    font-family: ElegantIcons;
+                                    font-size: 18px;
+                                    font-weight: normal;
+                                    font-style: normal;
+                                    text-rendering: auto;
+                                    -webkit-font-smoothing: antialiased;
+                                    -moz-osx-font-smoothing: grayscale;
+                                    color: #969696;
+                                }
+                            }
+
+                            &:hover{
+                                .item_outer {
+
+                                    &:after {
+                                        color: $first-main-color;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                &.right {
+            
+                    li {
+                
+                        &.current-menu-ancestor > a,
+                        &.current-menu-item > a {
+                    
+                            .item_outer {
+                        
+                                &:before {
+                                    left: auto;
+                                    right: 0;
+                                }
+                            }
+                        }
+                
+                        &.sub {
+                    
+                            > a {
+                        
+                                .item_outer {
+                            
+                                    &:after {
+                                        right: auto;
+                                        left: 0;
+                                        content: "\34";
+                                    }
+                                }
+                            }
+                        }
+                
+                        a {
+                            text-align: right;
+                        }
+                
+                        ul {
+                            left: -100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    li {
+        
+        &.left_position {
+            
+            .second {
+                left: 0;
+            }
+        }
+        
+        &.right_position {
+            
+            .second {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+    > ul > li {
+        &:hover > .second {
+            z-index: 20;
+        }
+    }
+
+    .narrow .second .inner {
+
+        ul {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            background-color: #fff;
+            padding: 19px 0;
+
+            li {
+                width: 235px;
+
+                ul {
+                    position: absolute;
+                    left: 100%;
+                    top: -19px;
+                    height: auto;
+                    opacity: 0;
+                    overflow: hidden;
+                    z-index: 10;
+                    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.03);
+                    -webkit-transform: translateZ(0);
+                    @include qodefTransition(opacity .4s ease-out);
+                }
+
+                &:hover ul {
+                    z-index: 20;
+                    opacity: 1;
+                }
+            }
+
+            &.right li ul {
+                left: -100%;
+            }
+        }
+    }
+}
+
+/* Wide drop down styles
+   ========================================================================== */
+.qodef-drop-down .wide {
+
+    .second {
+
+        .inner {
+            background-color: #fff;
+            text-align: center;
+
+            ul {
+
+                li {
+
+                    a {
+                        padding: 5px 0;
+                    }
+
+                    ul {
+                        position: relative;
+                        display: block;
+                        top: 0;
+                        left: 0;
+                        visibility: visible;
+
+                        li {
+
+                            &:last-child {
+
+                                a {
+                                    padding-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            > ul {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                width: 100%;
+                padding: 35px 60px;
+                box-sizing: border-box;
+
+                @media only screen and (min-width: 1400px) {
+                    .qodef-grid-1300 & {
+                        width: $grid-width-1300;
+                    }
+                }
+
+                @media only screen and (min-width: 1300px) {
+                    .qodef-grid-1200 & {
+                        width: $grid-width-1200;
+                    }
+                }
+
+                @media only screen and (min-width: 1200px) {
+                    .qodef-grid-1000 & {
+                        width: $grid-width-1000;
+                    }
+                }
+
+                @media only screen and (min-width: 1024px) {
+                    .qodef-grid-800 & {
+                        width: $grid-width-800;
+                    }
+                }
+
+                > li {
+                    float: left;
+                    width: 20%;
+                    margin: 0;
+                    padding: 0 26px;
+                    box-sizing: border-box;
+
+                    &:nth-child(5n+1) {
+                        clear: both;
+                    }
+
+                    > a {
+                        padding: 0 0 12px;
+                        font-family: $default-heading-font;
+                        font-weight: 700;
+                        color: $default-heading-color;
+                        font-size: 15px;
+                        line-height: 1.1em;
+
+                        &.no_link {
+                            cursor: default;
+                        }
+
+                        .item_outer {
+                            padding: 0;
+                            overflow: inherit;
+
+                            &:before,
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &.current-menu-ancestor > a,
+                    &.current-menu-item > a {
+                        color: $first-main-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &.left_position,
+    &.right_position {
+
+        .second .inner > ul {
+            width: auto;
+            white-space: nowrap;
+
+            > li {
+                float: none;
+                display: inline-block;
+                vertical-align: top;
+
+                &:nth-child(4n+1) {
+                    border-left: none;
+                }
+            }
+        }
+
+        .second ul li {
+            width: 200px;
+        }
+    }
+}
+/* ==========================================================================
+   Header main menu style - end
+   ========================================================================== */

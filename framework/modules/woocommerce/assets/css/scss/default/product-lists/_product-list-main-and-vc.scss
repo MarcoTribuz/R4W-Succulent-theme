@@ -1,0 +1,290 @@
+/* ==========================================================================
+   WooCommerce Product List page styles - begin
+   ========================================================================== */
+
+.qodef-pl-main-holder,
+.related.products,
+.upsells.products,
+.cross-sells,
+.qodef-content .woocommerce {
+    @include qodefRelativeHolderLayout();
+}
+
+.qodef-pl-main-holder {
+    margin: 0 0 22px;
+}
+
+ul.products {
+    list-style: none;
+	margin: 0 -15px;
+    clear: both;
+    
+    > .product {
+        position: relative;
+        display: inline-block;
+	    vertical-align: middle;
+	    float: left;
+	    margin: 0 0 30px;
+	    padding: 0 15px;
+	    box-sizing: border-box;
+        text-align: center;
+        overflow: hidden;
+
+        &:hover{
+            .price {
+                opacity:0;
+                @include qodefTransform(translate3d(15%,0,0));
+            }
+            .button,
+            .added_to_cart {
+                opacity:1;
+                @include qodefTransform(translate3d(0,-50%,0));
+            }
+        }
+        
+        .touch & {
+            cursor: pointer;
+        }
+        
+        .qodef-product-list-title {
+            margin: 0 0 11px;
+        }
+        
+        .qodef-pl-rating-holder {
+            @include qodefRelativeHolderLayout();
+            line-height: 1;
+            margin: 10px 0 3px;
+        }
+
+        .qodef-pl-price-wrapper{
+            position: relative;
+            margin-bottom: 12px;
+        }
+        
+        .price {
+            @include qodefWooCommercePriceStyle();
+            margin: 0;
+            font-size: 23px;
+            line-height: 1.1em;
+            font-family: $default-heading-font;
+            font-weight: 700;
+            letter-spacing: -.02em;
+            color: $first-main-color;
+            @include qodefTransform(translate3d(0,0,0));
+            @include qodefTransition(all .4s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+        }
+        
+        .button,
+        .added_to_cart {
+            margin: 0;
+            width: 100%;
+            font-size: 15px;
+            font-family: $default-heading-font;
+            color: $first-main-color;
+            letter-spacing: 0;
+            font-weight: 700;
+            background-color: transparent;
+            padding: 0;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            line-height: 1;
+            opacity:0;
+            @include qodefTransform(translate3d(-15%,-50%,0));
+            @include qodefTransition(all .4s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+
+            &:hover{
+                background-color: transparent;
+                color: $first-main-color;
+            }
+        }
+        
+        .button.added {
+            display: none;
+        }
+
+        .qodef-pl-categories{
+            margin: 0 0 9px;
+            a {
+                color: #afafaf;
+                &:hover {
+                    color: $first-main-color;
+                }
+            }
+        }
+        
+        .qodef-pl-inner {
+            @include qodefRelativeHolderLayout();
+            overflow: hidden;
+            
+            .qodef-pl-image {
+                @include qodefRelativeHolderLayout();
+                overflow: hidden;
+                
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+            
+            .qodef-pl-text {
+                @include qodefAbsoluteHolderLayout();
+                padding: 10px;
+                opacity: 0;
+                background-color: rgba($default-heading-color, 0.6);
+                box-sizing: border-box;
+                @include qodefTransition(opacity .2s ease-out);
+            }
+            
+            .qodef-pl-text-outer {
+                @include qodefTableLayout();
+                text-align: center;
+            }
+            
+            .qodef-pl-text-inner {
+                @include qodefTableCellLayout();
+                
+                .qodef-product-list-title,
+                .price,
+                .star-rating {
+                    color: #fff;
+                }
+                
+                .price del {
+                    color: #afafaf;
+                }
+            }
+            
+            > a {
+                @include qodefAbsoluteHolderLayout();
+            }
+        }
+        
+        .qodef-pl-text-wrapper {
+            @include qodefRelativeHolderLayout();
+            margin: 0;
+        }
+    }
+}
+
+$columns_space_label: ('no', 'tiny', 'small', 'normal', 'medium', 'large');
+$columns_space_width: (0, 5, 10, 15, 20, 25);
+
+@for $i from 0 to length($columns_space_label) {
+    &.qodef-woo-#{nth($columns_space_label,$i+1)}-space {
+        $column_width: nth($columns_space_width,$i+1);
+        $column_width_margin: $column_width * 2;
+        
+        ul.products {
+            @if($column_width == 0) {
+                margin: 0;
+            } @else {
+                margin: 0 -#{$column_width}px;
+            }
+            
+            > .product {
+                padding: 0 #{$column_width}px;
+                margin: 0 0 #{$column_width_margin}px;
+            }
+        }
+    }
+}
+
+.qodef-pl-main-holder,
+.related.products,
+.upsells.products,
+.cross-sells {
+    
+    $product_list_columns: ('columns-3', 'columns-4');
+    
+    @for $i from 0 to length($product_list_columns) {
+        $column_width: 100%/($i+3);
+        
+        > .products {
+            
+            > .product {
+                
+                @media only screen and (min-width: $ipad-landscape-plus-pixel) {
+                    
+                    .qodef-woocommerce-#{nth($product_list_columns,$i+1)} & {
+                        width: $column_width;
+                        
+                        &:nth-child(#{$i+3}n+1) {
+                            clear: both;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.woocommerce {
+    
+    &.columns-1 {
+        
+        > .products {
+            
+            > .product {
+                float: none;
+                width: 100%;
+            }
+        }
+    }
+    
+    $product_list_vc_columns: ('columns-2', 'columns-3', 'columns-4', 'columns-5', 'columns-6');
+    
+    @for $i from 0 to length($product_list_vc_columns) {
+        &.#{nth($product_list_vc_columns,$i+1)} {
+            $column_vc_width: 100%/($i+2);
+            
+            > .products {
+                
+                > .product {
+                    width: $column_vc_width;
+                    $product_list_vc_columns_label: #{nth($product_list_vc_columns,$i+1)};
+                    
+                    @if $product_list_vc_columns_label == 'columns-5' {
+                        @media only screen and (min-width: $laptop-landscape-plus-pixel) {
+                            
+                            &:nth-child(#{$i+2}n+1) {
+                                clear: both;
+                            }
+                        }
+                    } @else if $product_list_vc_columns_label == 'columns-6' {
+                        @media only screen and (min-width: $laptop-landscape-large-plus-pixel) {
+                            
+                            &:nth-child(#{$i+2}n+1) {
+                                clear: both;
+                            }
+                        }
+                    } @else if $product_list_vc_columns_label == 'columns-3' {
+                        @media only screen and (min-width: $ipad-portrait-plus-pixel) {
+                            
+                            &:nth-child(#{$i+2}n+1) {
+                                clear: both;
+                            }
+                        }
+                    } @else if $product_list_vc_columns_label == 'columns-2' {
+                        @media only screen and (min-width: $phone-landscape-plus-pixel) {
+                            
+                            &:nth-child(#{$i+2}n+1) {
+                                clear: both;
+                            }
+                        }
+                    } @else {
+                        @media only screen and (min-width: $ipad-landscape-plus-pixel) {
+                            
+                            &:nth-child(#{$i+2}n+1) {
+                                clear: both;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Product List page styles - end
+   ========================================================================== */

@@ -1,0 +1,63 @@
+1.5
+- Added WordPress 5.7 compatibility
+- Added WooCommerce 5.3.0 compatibility
+- Updated WPBakery Page Builder to 6.6.0
+- Updated Revolution Slider to 6.4.11
+- Updated Timetable to 6.6
+- Updated Select Core plugin to 1.3
+- Updated Select Instagram Feed plugin to 2.0.1
+- Updated Select Twitter Feed plugin to 1.0.3
+- Improved PHP 8 compatibility
+
+1.4
+- Added WordPress 5.5 compatibility
+- Added WooCommerce 4.7.1 compatibility
+- Updated WPBakery Page Builder to 6.4.2
+- Updated Revolution Slider to 6.3.1
+- Updated Timetable to 6.4
+- Updated Select Core plugin to 1.2.1
+- Updated Select Instagram Feed plugin to 2.0
+- Fixed Recipe shortcode rendering when without group name
+
+1.3
+- Added WooCommerce 3.9.2 compatibility
+- Updated WPBakery Page Builder to 6.1
+- Updated Revolution Slider 6.1.8
+- Updated Core plugin to 1.2
+- Updated Child theme to 1.0.2
+- Removed unused file instagram-redirect.php from Select Instagram Feed plugin
+- Removed unused file twitter-redirect.php from Select Twitter Feed plugin
+- Updated Select Instagram Feed plugin to 1.0.2
+- Updated Select Twitter Feed plugin to 1.0.2
+- Fixed 'Use video background?' option for vc_row
+
+1.2.3
+- Updated WPBakery Page Builder to 6.0.1
+- Improved theme security
+- Minor improvements
+
+1.2.2
+- Fixed child theme style
+
+1.2.1
+- Added WooCommerce 3.6 compatibility
+- Updated Core plugin to 1.1.1
+- Improved import functionality
+- Improved theme security
+
+1.2
+- Updated Wordpress 5.1.1
+- Updated Revolution Slider 5.4.8.3
+- Updated Succulent Core Plugin 1.1
+- Updated Succulent Instagram Feed to version 1.0.1
+- Updated Succulent Twitter Feed to version 1.0.1
+- Updated Timetable to 5.8
+- Updated pot file
+- Improved framework files
+
+1.1
+- Added WooCommerce 3.4.5 compatibility
+- Added compatibility with Gutenberg plugin
+- Added compatibility with PHP 7.2
+- Updated Visual Composer to 5.5.4
+- Updated Timetable to 5.5

@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Standard With Breadcrumbs Title type responsive style - begin
+   ========================================================================== */
+
+@include ipad-landscape {
+	
+	.qodef-title-holder {
+		
+		&.qodef-standard-with-breadcrumbs-type {
+			
+			.qodef-title-info,
+			.qodef-breadcrumbs-info {
+				display: block;
+				width: 100%;
+			}
+			
+			.qodef-breadcrumbs-info {
+				margin: 0;
+				text-align: initial;
+				white-space: inherit;
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+
+    .qodef-title-holder {
+
+        &.qodef-standard-with-breadcrumbs-type {
+
+            .qodef-breadcrumbs-info {
+                display: none;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Standard With Breadcrumbs Title type responsive style - end
+   ========================================================================== */

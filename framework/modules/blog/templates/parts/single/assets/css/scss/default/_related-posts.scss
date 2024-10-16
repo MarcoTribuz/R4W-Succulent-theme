@@ -1,0 +1,121 @@
+/* Related posts styles - begin
+	====================================================================== */
+
+.qodef-related-posts-holder {
+    @include qodefRelativeHolderLayout();
+    padding: 0;
+    box-sizing: border-box;
+
+    .qodef-related-posts-holder-inner {
+        padding: 46px 0 26px;
+    }
+
+    .qodef-related-posts-title {
+        margin: 0 0 40px;
+
+        > * {
+            margin: 0;
+        }
+    }
+
+    .qodef-related-posts-inner {
+        margin: 0 -15px;
+    }
+
+    .qodef-related-post {
+        position: relative;
+        display: inline-block;
+        float: left;
+        width: 25%;
+        margin: 0 0 30px;
+        padding: 0 15px;
+        box-sizing: border-box;
+    
+        .qodef-content-has-sidebar & {
+            widtH: 33.33333333333333%;
+        }
+    
+        .touch & {
+            cursor: pointer;
+        }
+    
+        &:hover {
+        
+            .qodef-related-post-image a:after {
+                opacity: 1;
+            }
+        }
+    
+        .qodef-related-post-image {
+            @include qodefRelativeHolderLayout();
+            overflow: hidden;
+        
+            a {
+                position: relative;
+                display: block;
+            
+                &:after {
+                    @include qodefImageOverlayHoverStyle(false);
+                }
+            }
+        
+            img {
+                display: block;
+            }
+        }
+    
+        .qodef-post-title {
+            margin: 19px 0 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    
+        .qodef-post-info {
+            @include qodefRelativeHolderLayout();
+            margin: 4px 0 0;
+
+            > div {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                padding: 0 13px 0 0;
+                color: inherit;
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    right: 4px;
+                    content: '/';
+                }
+
+                &:last-child {
+                    padding: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                &.qodef-post-info-author {
+
+                    .qodef-post-info-author-text {
+                        margin: 0 3px 0 0;
+                    }
+                }
+
+                a {
+                    color: inherit;
+                    line-height: inherit;
+                    font-size: inherit;
+                    font-weight: inherit;
+                }
+            }
+        }
+    }
+}
+
+/* Related posts styles - end
+	====================================================================== */

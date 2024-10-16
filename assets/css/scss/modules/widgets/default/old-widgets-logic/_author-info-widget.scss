@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Author Info widget style - begin
+   ========================================================================== */
+
+.qodef-author-info-widget {
+	@include qodefRelativeHolderLayout();
+	box-sizing: border-box;
+	
+	.qodef-aiw-image {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		border-radius: 100%;
+		overflow: hidden;
+		
+		img {
+			display: block;
+		}
+	}
+
+	.qodef-aiw-title {
+		margin: 28px 0 0;
+	}
+	
+	.qodef-aiw-text {
+		display: block;
+		margin: 10px 0 0;
+	}
+}
+/* ==========================================================================
+   Author Info widget style - end
+   ========================================================================== */

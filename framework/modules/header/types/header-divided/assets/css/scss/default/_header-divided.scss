@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Header Divided style - begin
+   ========================================================================== */
+
+.qodef-header-divided {
+	
+	.qodef-page-header {
+		
+		.qodef-logo-wrapper {
+			
+			a {
+				
+				img {
+					margin: 0 auto;
+				}
+			}
+		}
+		
+		.qodef-menu-area {
+			opacity: 0;
+			
+			.qodef-grid {
+				height: 100%;
+			}
+		}
+		
+		.qodef-main-menu {
+			width: auto;
+			margin: 0;
+			
+			& > ul > li > a span.item_inner {
+				padding: 0 28px;
+			}
+		}
+		
+		.qodef-vertical-align-containers {
+			padding: 0;
+			
+			.qodef-position-left {
+				text-align: right;
+				
+				.qodef-position-left-inner {
+					height: 100%;
+					text-align: left;
+					padding-right: 0;
+				}
+			}
+			
+			.qodef-position-right {
+				text-align: left;
+				
+				.qodef-position-right-inner {
+					height: 100%;
+					padding-left: 0;
+				}
+			}
+			
+			.qodef-position-center {
+				position: absolute;
+				width: 100%;
+			}
+		}
+		
+		.qodef-sticky-header .qodef-position-center-inner {
+			height: auto;
+		}
+	}
+}
+/* ==========================================================================
+   Header Divided style - end
+   ========================================================================== */

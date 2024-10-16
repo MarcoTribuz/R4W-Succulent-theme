@@ -1,0 +1,55 @@
+/* ==========================================================================
+# Fullscreen search responsive - start
+========================================================================== */
+
+.qodef-fullscreen-with-sidebar-search-holder {
+
+    @include laptop-landscape-medium {
+        .qodef-fullscreen-search-cell {
+            padding: 50px 0 0;
+        }
+
+        .qodef-fullscreen-sidebar {
+            margin: 20px 0 0;
+        }
+
+        .qodef-search-field {
+            font-size: 70px;
+        }
+
+        .qodef-search-submit {
+            font-size: 40px;
+        }
+    }
+    
+    @include ipad-landscape {
+        
+        .qodef-form-holder-inner {
+            width: 75%;
+        }
+    }
+    
+    @include ipad-portrait {
+
+        .qodef-field-holder{
+            .qodef-search-field{
+                font-size: 25px;
+            }
+        }
+        
+        .qodef-search-submit {
+            font-size: 25px;
+            bottom: 25px!important;
+        }
+    }
+    
+    @include phone-portrait {
+        
+        .qodef-form-holder-inner {
+            width: 80%;
+        }
+    }
+}
+/* ==========================================================================
+# Fullscreen search responsive - end
+========================================================================== */

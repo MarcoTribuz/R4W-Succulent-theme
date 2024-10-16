@@ -1,0 +1,15 @@
+.qodef-header-vertical {
+
+    .qodef-vertical-area-widget-holder {
+        @include qodefRelativeHolderLayout();
+        margin: 10px 0 0;
+        z-index: 100;
+    }
+
+    .qodef-vertical-area-widget-holder {
+        position: absolute;
+        width: 100%;
+        bottom: 15px;
+        left: 0;
+    }
+}

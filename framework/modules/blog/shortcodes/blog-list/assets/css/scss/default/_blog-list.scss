@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Blog List shortcode global style - begin
+   ========================================================================== */
+
+.qodef-blog-list-holder {
+	@include qodefRelativeHolderLayout();
+	clear: both;
+	
+	.qodef-blog-list {
+		@include qodefRelativeHolderLayout();
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.qodef-bl-item {
+		@include qodefRelativeHolderLayout();
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	
+	.qodef-bli-inner {
+		@include qodefRelativeHolderLayout();
+	}
+	
+	.qodef-bli-content {
+		@include qodefRelativeHolderLayout();
+		box-sizing: border-box;
+	}
+	
+	.qodef-post-image {
+		@include qodefRelativeHolderLayout();
+		margin: 0 0 32px;
+		
+		a {
+			display: block;
+
+            &:after {
+                @include qodefAbsoluteHolderLayout();
+                content: '';
+                background-color: rgba($first-main-color, .3);
+                opacity: 0;
+                @include qodefTransition(opacity .4s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+            }
+
+            &:hover {
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+		}
+		
+		img {
+			display: block;
+		}
+	}
+	
+	.qodef-bli-info {
+		@include qodefRelativeHolderLayout();
+		margin: 0 0 8px;
+		clear: both;
+		
+		> div {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			font-size: 13px;
+			line-height: 1.2;
+			float: left;
+			padding: 0 20px 5px 0;
+			
+			&:last-child {
+				padding: 0 0 5px;
+			}
+			
+			a {
+				color: $default-text-color;
+				
+				&:hover {
+					color: $first-main-color;
+				}
+			}
+		}
+	}
+	
+	.qodef-post-title {
+		margin: 0;
+	}
+	
+	.qodef-post-excerpt {
+		@include qodefRelativeHolderLayout();
+		margin: 16px 0 0;
+		
+		p {
+			margin: 0;
+		}
+		
+		&:after {
+			content: '...';
+		}
+	}
+	
+	.qodef-post-read-more-button {
+		@include qodefRelativeHolderLayout();
+		margin: 12px 0 0;
+	}
+}
+/* ==========================================================================
+   Blog List shortcode global style - end
+   ========================================================================== */

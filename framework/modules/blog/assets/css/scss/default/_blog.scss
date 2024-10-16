@@ -1,0 +1,657 @@
+/* ==========================================================================
+   Blog Common style - begin
+   ========================================================================== */
+
+.qodef-bs-grid-holder {
+    &.qodef-content-no-sidebar {
+        .qodef-blog-holder {
+            @media only screen and (min-width: $laptop-landscape) {
+                width: 75%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+.qodef-blog-holder {
+    @include qodefRelativeHolderLayout();
+    margin: 0 0 27px;
+    clear: both;
+
+    article {
+        @include qodefRelativeHolderLayout();
+        box-sizing: border-box;
+
+        &.sticky {
+
+            .qodef-post-title a {
+                color: $first-main-color;
+            }
+        }
+
+        .qodef-post-content {
+            @include qodefRelativeHolderLayout();
+        }
+
+        .qodef-post-image {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 100%;
+
+            img {
+                display: block;
+            }
+        }
+    
+        .qodef-post-image-background {
+            @include qodefRelativeHolderLayout();
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        
+            a {
+                @include qodefAbsoluteHolderLayout();
+            }
+        }
+    
+        .qodef-post-image-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            line-height: 1;
+            color: #fff;
+        }
+
+        .qodef-post-text {
+            @include qodefRelativeHolderLayout();
+            box-sizing: border-box;
+        }
+    
+        .qodef-post-title {
+            margin: 0;
+        }
+    
+        .qodef-post-excerpt-holder {
+            @include qodefRelativeHolderLayout();
+            margin: 15px 0 0;
+        
+            p {
+                margin: 0;
+            }
+        }
+    
+        .qodef-post-excerpt {
+        
+            &:after {
+                content: '...';
+            }
+        }
+    
+        .qodef-more-link-container {
+            @include qodefRelativeHolderLayout();
+            margin: 15px 0 0;
+        }
+
+        .qodef-post-info {
+            @include qodefRelativeHolderLayout();
+
+            > * {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                color: currentColor;
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
+    
+        .qodef-post-info-top {
+            margin-bottom: 5px;
+            line-height: 1em;
+        
+            > div {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                padding: 0 14px 0 0;
+                color: $default-text-color;
+                font-size: 13px;
+                letter-spacing: .05em;
+                text-transform: uppercase;
+
+                h6{
+                    margin: 0;
+                }
+    
+                &:after {
+                    content: '/';
+                    position: absolute;
+                    top: 0;
+                    right: -2px;
+                }
+    
+                &:last-child {
+                    padding: 0;
+        
+                    &:after {
+                        content: '';
+                    }
+                }
+    
+                a {
+                    color: inherit;
+        
+                    &:hover {
+                        color: $first-main-color;
+                    }
+                }
+            }
+        }
+    
+        .qodef-post-info-bottom {
+            padding-top: 25px;
+
+            h5{
+                margin: 0;
+            }
+
+            .qodef-post-info-bottom-left,
+            .qodef-post-info-bottom-right {
+                @include qodefRelativeHolderLayout();
+            }
+	
+	        @media only screen and (min-width: $ipad-portrait-plus-pixel) {
+		
+		        .qodef-post-info-bottom-left,
+		        .qodef-post-info-bottom-right {
+			        width: 50%;
+		        }
+		
+		        .qodef-post-info-bottom-left {
+			        float: left;
+		        }
+		
+		        .qodef-post-info-bottom-right {
+			        text-align: right;
+			        float: right;
+		        }
+	        }
+    
+            .qodef-post-info-bottom-right {
+        
+                > div {
+                    margin-left: 17px;
+            
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    
+        //Link post style
+        &.format-link {
+        
+            .qodef-post-text{
+                padding: 46px 50px 22px;
+                background-color: $first-main-color;
+                overflow: hidden;
+                background-size: cover;
+                -webkit-filter: saturate(70%);
+                filter: saturate(70%);
+                @include qodefTransition(all .4s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+
+                &:hover {
+                    -webkit-filter: saturate(100%);
+                    filter: saturate(100%);
+                }
+            }
+
+            .qodef-post-text-main {
+                @include qodefTableLayout();
+                text-align: left;
+            }
+        
+            .qodef-post-mark {
+                display: inline-block;
+                position: absolute;
+                top: -13px;
+                left: 30px;
+                width: 50px;
+            
+                .qodef-link-mark {
+                    padding-top: 5px;
+                    font-size: 50px;
+                }
+            }
+
+            .qodef-post-info-category{
+                h6{
+                    margin-bottom: 5px;
+                    text-transform: uppercase;
+                }
+            }
+        
+            .qodef-post-link-holder {
+                @include qodefTableCellLayout();
+                vertical-align: top;
+                text-align: left;
+
+                a {
+                    &:hover {
+                        color:#fff;
+                    }
+                }
+            }
+
+            .qodef-post-info-bottom{
+                padding-top: 45px;
+            }
+
+            &.qodef-post-light-skin{
+                .qodef-post-info-category{
+                    a{
+                        color: #fff;
+                    }
+                }
+                .qodef-post-mark {
+                    .qodef-link-mark {
+                        color: #fff;
+                    }
+                }
+                .qodef-post-text-main{
+                    .qodef-post-title{
+                        color: #fff;
+
+                        &:hover {
+                            color:#fff;
+                        }
+                    }
+                }
+                .qodef-post-info-bottom{
+                    > div {
+                        a{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            &.qodef-post-dark-skin{
+                .qodef-post-mark {
+                    .qodef-link-mark {
+                        color: $default-heading-color;
+                    }
+                }
+                .qodef-post-text-main{
+                    .qodef-post-title{
+                        color: $default-heading-color;
+                    }
+                }
+                .qodef-post-info-bottom{
+                    > div {
+                        a{
+                            color: $default-heading-color;
+                        }
+                    }
+                }
+            }
+        }
+    
+        //Quote post style
+        &.format-quote {
+        
+            .qodef-post-text {
+                padding: 46px 50px 22px;
+                background-color: $first-main-color;
+                overflow: hidden;
+                background-size: cover;
+                -webkit-filter: saturate(75%);
+                filter: saturate(75%);
+                @include qodefTransition(all .4s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+
+                &:hover {
+                    -webkit-filter: saturate(100%);
+                    filter: saturate(100%);
+                }
+            }
+
+            .qodef-post-info-category{
+                h6{
+                    margin-bottom: 5px;
+                    text-transform: uppercase;
+                }
+            }
+        
+            .qodef-post-text-main {
+                @include qodefTableLayout();
+                text-align: left;
+
+                .qodef-post-title{
+                    a{
+                        &:hover {
+                            color:#fff;
+                        }
+
+                        &:before,
+                        &:after{
+                            content: '’’';
+                        }
+                    }
+                }
+
+                .qodef-quote-author{
+                    position: relative;
+                    margin: 20px 0 0;
+                    padding-left: 7px;
+
+                    &:before{
+                        content: ' ';
+                        width: 5px;
+                        height: 3px;
+                        left: 0;
+                        background-color: $default-heading-color;
+                        position: absolute;
+                        top:50%;
+                        @include qodefTransform(translateY(-50%));
+                    }
+                }
+            }
+        
+            .qodef-post-mark {
+                display: inline-block;
+                position: absolute;
+                top: -40px;
+                left: 30px;
+                width: 50px;
+            
+                .qodef-quote-mark {
+                    padding-top: 5px;
+                    font-size: 94px;
+                }
+            }
+        
+            .qodef-post-link-holder {
+                @include qodefTableCellLayout();
+                vertical-align: top;
+                text-align: left;
+
+                a {
+                    &:hover {
+                        color:#fff;
+                    }
+                }
+            }
+
+            .qodef-post-info-bottom{
+                padding-top: 45px;
+            }
+
+            &.qodef-post-light-skin{
+                .qodef-post-info-category{
+                    a{
+                        color: #fff;
+                    }
+                }
+                .qodef-post-mark {
+                    .qodef-quote-mark {
+                        color: #fff;
+                    }
+                }
+                .qodef-post-text-main{
+                    .qodef-post-title{
+                        color: #fff;
+                    }
+                    .qodef-quote-author{
+                        color: #fff;
+
+                        &:before{
+                            background-color: #fff;
+                        }
+                    }
+                }
+                .qodef-post-info-bottom{
+                    > div {
+                        a{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            &.qodef-post-dark-skin{
+                .qodef-post-mark {
+                    .qodef-quote-mark {
+                        color: $default-heading-color;
+                    }
+                }
+                .qodef-post-text-main{
+                    .qodef-post-title{
+                        color: $default-heading-color;
+                    }
+                    .qodef-quote-author{
+                        color: $default-heading-color;
+
+                        &:before{
+                            background-color: $default-heading-color;
+                        }
+                    }
+                }
+                .qodef-post-info-bottom{
+                    > div {
+                        a{
+                            color: $default-heading-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        //Gallery post style
+        &.format-gallery {
+
+            .qodef-post-image {
+                width: 100%;
+            }
+
+            .owl-carousel .owl-item {
+                z-index: 2;
+
+                &.active {
+                    z-index: 3;
+                }
+            }
+        }
+
+        //Audio post style
+        &.format-audio {
+    
+            &.has-post-thumbnail {
+        
+                .qodef-post-heading {
+                    position: relative;
+                }
+        
+                .qodef-blog-audio-holder {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+    
+            .qodef-post-image {
+                width: 100%;
+                max-width: inherit;
+        
+                img {
+                    width: 100%;
+                }
+            }
+
+            .qodef-blog-audio-holder {
+
+                .mejs-container, .mejs-embed, .mejs-embed body, .mejs-container .mejs-controls {
+                    background: none;
+                }
+
+                .mejs-container {
+                    background-color: $first-main-color;
+                }
+
+                .mejs-container,
+                .mejs-container .mejs-controls {
+                    height: 38px !important;
+                }
+
+                .mejs-container .mejs-controls {
+                    padding: 0 10px 0 4px;
+                    box-sizing: border-box;
+                }
+
+                .mejs-container .mejs-controls > .mejs-playpause-button {
+                    width: 39px;
+                }
+
+                .mejs-container .mejs-controls > .mejs-volume-button {
+                    width: 30px;
+                }
+
+                .mejs-container .mejs-controls > .mejs-playpause-button,
+                .mejs-container .mejs-controls > .mejs-volume-button {
+                    height: 38px;
+
+                    button {
+                        position: relative;
+                        height: 100%;
+                        background: none;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        margin: 0;
+                        border: 0;
+                        outline: none;
+                    }
+
+                    &.mejs-play button {
+                        width: 39px;
+                        background-image: url('../img/audio/play.png');
+                    }
+
+                    &.mejs-pause button {
+                        width: 39px;
+                        background-image: url('../img/audio/pause.png');
+                    }
+
+                    &.mejs-stop button {
+                        width: 39px;
+                        background-image: url('../img/audio/stop.png');
+                    }
+
+                    &.mejs-mute button {
+                        width: 30px;
+                        background-image: url('../img/audio/sound.png');
+                    }
+
+                    &.mejs-unmute button {
+                        width: 30px;
+                        background-image: url('../img/audio/mute.png');
+                    }
+                }
+
+                .mejs-container .mejs-controls > .mejs-time {
+                    height: 100%;
+                    padding: 0;
+                    font-family: inherit;
+                    font-size: 13px;
+                    color: #fff;
+                    line-height: 41px;
+                }
+
+                .mejs-container .mejs-controls > .mejs-time-rail {
+                    height: 100%;
+                    padding: 0;
+                    font-family: inherit;
+
+                    .mejs-time-total {
+                        height: 5px;
+                        margin: 17px 0;
+                        background: none;
+                        background-color: #ffd8c9;
+
+                        .mejs-time-current {
+                            height: 5px;
+                            background-color: #fff;
+                        }
+                        
+                        .mejs-time-buffering,
+                        .mejs-time-hovered {
+                            height: 5px;
+                            z-index: 9999;
+                        }
+                        
+                        .mejs-time-hovered {
+                            background: hsla(0, 0, 0, 0.5);
+                        }
+
+                        .mejs-time-float {
+                            top: -16px;
+                            border: 0;
+                            color: #fff;
+                        }
+                        
+                        .mejs-time-handle-content {
+                            display: none;
+                        }
+    
+                        .mejs-time-float-corner {
+                            top: 11px;
+                        }
+
+                        .mejs-time-loaded,
+                        .mejs-time-float {
+                            background: none;
+                        }
+                    }
+                }
+
+                .mejs-container .mejs-controls > a.mejs-horizontal-volume-slider {
+                    height: 38px;
+
+                    .mejs-horizontal-volume-total,
+                    .mejs-horizontal-volume-current {
+                        height: 5px;
+                        background: none;
+                    }
+
+                    .mejs-horizontal-volume-total {
+                        top: 17px;
+                        background-color: #ffd8c9;
+                    }
+
+                    .mejs-horizontal-volume-current {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+
+        &.format-video {
+            
+            .qodef-self-hosted-video {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Blog Common style - end
+   ========================================================================== */

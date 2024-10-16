@@ -1,0 +1,62 @@
+// widgets spacing
+$widget-bottom-margin: 12px;
+$widget-inner-padding: 16px;
+$widget-title-margin: 22px 0 17px;
+
+// list items dimensions
+$widget-list-item-height: 20px;
+$widget-list-item-padding: 15px;
+
+// list items color
+$widget-list-item-background-color: #999999;
+
+// list items border
+$widget-list-item-border-color: #cccccc;
+$widget-list-item-border-width: 1px;
+$widget-list-item-border-style: solid;
+
+// text
+$widget-text-color: #959595;
+$widget-heading-color: #fff;
+
+// links
+$widget-link-color: #fff;
+$widget-link-hover-color: $first-main-color;
+
+// specific widgets
+$widget-search-form-height: 52px;
+$widget-tag-cloud-height: 30px;
+
+footer {
+    @import 'widgets/default-wordpress-widgets-flat';
+
+    .qodef-blog-list-widget {
+        .qodef-blog-list-holder {
+            .qodef-bl-item{
+                line-height: inherit;
+            }
+            .qodef-post-title{
+                a{
+                    font-size: inherit;
+                    line-height: inherit;
+                    color: #959595;
+                    font-weight: inherit;
+                    font-family: inherit;
+
+                    &:hover{
+                        color: $first-main-color;
+                    }
+                }
+            }
+            .qodef-post-info-date{
+                a{
+                    color: #fff;
+
+                    &:hover{
+                        color: $first-main-color;
+                    }
+                }
+            }
+        }
+    }
+}

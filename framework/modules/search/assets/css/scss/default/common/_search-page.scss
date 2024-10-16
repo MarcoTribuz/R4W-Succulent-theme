@@ -1,0 +1,163 @@
+/* ==========================================================================
+# Search template style - begin
+========================================================================== */
+
+.qodef-search-page-holder {
+    @include qodefRelativeHolderLayout();
+    margin: 89px 0 112px;
+    
+    .qodef-fullscreen-search-table {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .qodef-fullscreen-search-cell {
+        @include qodefTableCellLayout();
+        text-align: center;
+        
+        .qodef-fullscreen-search-image{
+            margin-bottom: 60px;
+        }
+    }
+    
+    .qodef-form-holder-inner {
+        position: relative;
+        width: 100%;
+        margin: auto;
+    }
+    
+    .qodef-field-holder {
+        display: block;
+        position: relative;
+    }
+    
+    .qodef-search-field {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border: 0;
+        padding: 0 0 18px;
+        background: transparent;
+        outline: none;
+        font-family: inherit;
+        font-size: 16px;
+        color: #c7c7c7;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        font-weight: 400;
+        text-align: center;
+        border-bottom: 1px solid #d4d4d4;
+        @include qodefTransition(all 0.1s);
+        
+        &:focus{
+            color: $default-heading-color;
+        }
+    }
+    
+    .qodef-button-holder {
+        margin-bottom: 20px;
+    }
+    
+    .qodef-search-submit {
+        font-size: 53px;
+        line-height: 1em;
+        color: #f4f4f4;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+        opacity: 1;
+        @include qodefTransition(color .3s cubic-bezier(.48,.19,.2,.86));
+        
+        &:hover {
+            color: $default-heading-color;
+        }
+    }
+    
+    article {
+        @include qodefRelativeHolderLayout();
+        padding: 30px 0;
+        margin: 0;
+        border-bottom: 1px solid $default-border-color;
+        
+        &.sticky {
+            
+            .qodef-post-title a {
+                color: $first-main-color;
+            }
+        }
+        
+        &.page {
+            
+            .qodef-post-title-area .qodef-post-info > div.qodef-post-info-category {
+                display: none;
+            }
+        }
+        
+        .qodef-post-content {
+            @include qodefRelativeHolderLayout();
+        }
+        
+        .qodef-post-image {
+            display: block;
+            float: left;
+            width: 130px;
+            
+            a, img {
+                display: block;
+            }
+        }
+        
+        .qodef-post-title-area {
+            min-height: 130px;
+            padding: 0 0 0 150px;
+            
+            &.qodef-no-thumbnail{
+                padding: 0;
+                min-height: inherit;
+            }
+            
+            .qodef-post-title-area-inner {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                box-sizing: border-box;
+                
+                .qodef-post-title {
+                    margin: 0;
+                }
+                
+                .qodef-post-excerpt {
+                    margin: 7px 0 0;
+                }
+            }
+        }
+    }
+    
+    .qodef-form-new-search-text {
+        margin-top: 56px;
+        p {
+            font-weight: 700;
+            color: #bebdbd;
+            font-family: $default-heading-font;
+            font-size: 14px;
+        }
+    }
+    
+    .qodef-blog-no-posts {
+        font-weight: 700;
+        color: #000000;
+        text-align: center;
+        font-family: $default-heading-font;
+        margin-top: 0;
+        font-size: 14px;
+    }
+    
+    .qodef-blog-pagination {
+        margin: 50px 0 0;
+    }
+}
+/* ==========================================================================
+# Search template style - end
+========================================================================== */

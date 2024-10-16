@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Blog Single style - begin
+   ========================================================================== */
+.qodef-blog-holder.qodef-blog-single {
+	
+	article {
+		margin: 0 0 50px;
+		
+		.qodef-post-heading {
+			margin-bottom: 39px;
+		}
+        
+        .qodef-post-title {
+            margin-bottom: 5px;
+        }
+		
+		.qodef-post-text {
+			padding: 0 0 14px;
+		}
+
+        .qodef-post-info-bottom{
+            padding-top: 14px;
+
+            .qodef-tags-holder{
+                margin-top: 51px;
+
+                .qodef-tags{
+                    a{
+                        margin-right: 7px;
+                        padding: 1px 20px;
+                        color: #fff;
+                        font-family: $default-heading-font;
+                        font-weight: 700;
+                        background-color: $first-main-color;
+                        font-size: 14px;
+                        text-transform: capitalize;
+                        @include qodefTransition(background-color .2s ease-in-out);
+                        display: inline-block;
+                        margin-bottom: 7px;
+
+                        &:hover{
+                            color: #fff;
+                            background-color: #ffab8a;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.format-link,
+        &.format-quote{
+            .qodef-post-content{
+                margin-bottom: 22px;
+            }
+            .qodef-post-title {
+                margin-bottom: 0;
+            }
+            .qodef-post-text {
+                padding: 46px 50px 80px;
+            }
+            .qodef-post-info-bottom{
+                >div{
+                    a{
+                        color: #3c3c3c;
+
+                        &:hover{
+                            color: $first-main-color;
+                        }
+                    }
+                }
+            }
+        }
+	}
+}
+/* ==========================================================================
+   Blog Single style - end
+   ========================================================================== */

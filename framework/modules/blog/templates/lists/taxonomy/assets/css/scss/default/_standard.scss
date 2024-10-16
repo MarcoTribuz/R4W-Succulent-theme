@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Blog List - Standard style - begin
+   ========================================================================== */
+
+.qodef-blog-holder {
+	
+    &.qodef-blog-standard {
+	    
+        article {
+            margin: 0 0 53px;
+            padding: 0;
+
+            &.qodef-post-has-media {
+	            
+                .qodef-post-heading {
+                    margin-bottom: 39px;
+                }
+            }
+
+            .qodef-post-image {
+              a {
+                &:after {
+                  @include qodefAbsoluteHolderLayout();
+                  content: '';
+                  background-color: rgba($first-main-color, .3);
+                  opacity: 0;
+                  @include qodefTransition(opacity .2s ease-in-out);
+                }
+
+                &:hover {
+                  &:after {
+                      opacity: 1;
+                  }
+                }
+              }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List - Standard style - end
+   ========================================================================== */

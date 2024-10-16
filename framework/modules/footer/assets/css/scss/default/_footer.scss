@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Footer style - begin
+   ========================================================================== */
+
+.qodef-page-footer {
+    @include qodefRelativeHolderLayout();
+    z-index: 100;
+    box-sizing: border-box;
+
+    .qodef-footer-top-holder {
+        @include qodefRelativeHolderLayout();
+        background-color: #1c1c1c;
+        box-sizing: border-box;
+
+        .qodef-footer-top-alignment-center{
+            text-align: center;
+        }
+	    
+        .qodef-footer-top-alignment-left{
+            text-align: left;
+        }
+	    
+        .qodef-footer-top-alignment-right{
+            text-align: right;
+        }
+
+        .qodef-column-content{
+            &.qodef-grid-col-3{
+                @media only screen and (min-width: 1024px) {
+                    padding-right: 3%;
+                }
+            }
+        }
+
+        .qodef-footer-top-inner{
+            box-sizing: border-box;
+	        
+            &.qodef-grid{
+                padding: 112px 0 91px;
+            }
+	        
+            &.qodef-full-width{
+                padding: 112px 6% 91px;
+            }
+        }
+    }
+
+    .qodef-footer-bottom-holder {
+        @include qodefRelativeHolderLayout();
+        background-color: #1c1c1c;
+        box-sizing: border-box;
+        text-align: center;
+
+        .qodef-footer-bottom-inner {
+            box-sizing: border-box;
+	        
+            &.qodef-grid {
+                padding: 19px 0;
+            }
+	        
+            &.qodef-full-width {
+                padding: 4px 40px;
+            }
+        }
+    }
+
+    &.qodef-footer-uncover {
+
+        .no-touch body:not(.error404) & {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 99;
+            @include qodefTransition(left 0.33s cubic-bezier(0.694, 0.0482, 0.335, 1));
+        }
+
+        .qodef-right-side-menu-opened & {
+            left: -270px;
+        }
+    }
+}
+
+.no-touch {
+    .qodef-uncovering-section {
+        .rev_slider_wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+}
+/* ==========================================================================
+   Footer style - end
+   ========================================================================== */

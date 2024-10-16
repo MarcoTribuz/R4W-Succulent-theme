@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Blog Slider shortcode style - begin
+   ========================================================================== */
+
+.qodef-blog-slider-holder {
+
+    /***** Carousel Type Style - begin *****/
+
+    &.qodef-bs-carousel {
+
+        .qodef-post-title {
+            margin: 0 0 6px;
+
+            a{
+                color: #fff;
+            }
+        }
+
+        .qodef-post-info-category{
+            h6{
+                margin: 0;
+            }
+            a{
+                color: #fff;
+                font-size: 14px;
+                line-height: 1.28em;
+                font-family: $default-heading-font;
+                font-weight: 700;
+                letter-spacing: 0;
+                text-transform: capitalize;
+            }
+        }
+
+        .qodef-blog-slider-item {
+            .qodef-bli-content {
+                @include qodefTransition(all .4s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+            }
+
+            .qodef-item-image {
+                overflow:hidden;
+            }
+
+            &:hover {
+                .qodef-bli-content {
+                    background-color:#ffab8a;
+                }
+            }
+        }
+        
+        @include phone-landscape {
+            .qodef-owl-slider {
+                .owl-nav {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    /***** Carousel Type Style - end *****/
+
+    .qodef-blog-slider-item {
+        @include qodefRelativeHolderLayout();
+        list-style-type: none;
+    }
+
+    .qodef-item-image {
+        @include qodefRelativeHolderLayout();
+    }
+
+    .qodef-bli-content{
+        padding: 23px 20px 18px;
+        background-color: $first-main-color;
+        text-align: center;
+    }
+
+    .qodef-item-text-wrapper {
+        @include qodefAbsoluteHolderLayout();
+        background-color: rgba($first-main-color, .85);
+        opacity: 0;
+        @include qodefTransition(opacity .45s ease-out);
+    }
+
+    .qodef-item-text-holder {
+        @include qodefTableLayout();
+    }
+
+    .qodef-item-text-holder-inner {
+        @include qodefTableCellLayout();
+        padding: 0 5%;
+    }
+
+    .qodef-post-title {
+        margin: 0;
+    }
+
+}
+/* ==========================================================================
+   Blog Slider shortcode style - end
+   ========================================================================== */

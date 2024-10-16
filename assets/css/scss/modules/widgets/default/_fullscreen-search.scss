@@ -1,0 +1,68 @@
+// widgets spacing
+$widget-bottom-margin: 45px;
+$widget-bottom-padding: 15px;
+$widget-inner-padding: 15px;
+$widget-title-margin: 0 0 32px;
+
+// widget color
+$widget-background-color: transparent;
+
+// widget border
+$widget-border-color: $default-border-color;
+$widget-border-width: 1px;
+$widget-border-style: solid;
+
+// list items dimensions
+$widget-list-item-height: 20px;
+$widget-list-item-padding: 15px;
+
+// list items color
+$widget-list-item-background-color: #999999;
+
+// list items border
+$widget-list-item-border-color: #cccccc;
+$widget-list-item-border-width: 1px;
+$widget-list-item-border-style: solid;
+
+// text
+$widget-text-color: #333333;
+$widget-heading-color: #999999;
+
+// links
+$widget-link-color: #666666;
+$widget-link-hover-color: $first-main-color;
+
+// specific widgets
+$widget-search-form-height: 52px;
+$widget-tag-cloud-height: 30px;
+
+.qodef-fullscreen-sidebar {
+    @import 'widgets/default-wordpress-widgets-flat';
+
+    .widget{
+        text-align: left;
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        .qodef-widget-title-holder {
+            margin-bottom: 21px;
+            .qodef-widget-title {
+                text-align: left;
+            }
+        }
+
+        &.qodef-blog-list-widget{
+            .qodef-blog-list-holder .qodef-bli-content{
+                text-align: left;
+            }
+        }
+
+        &.qodef-recent-post-widget{
+            .qodef-recent-posts{
+                .qodef-rp-item {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}

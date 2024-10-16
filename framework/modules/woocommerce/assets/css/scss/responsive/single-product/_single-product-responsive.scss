@@ -1,0 +1,106 @@
+/* ==========================================================================
+   WooCommerce Single Product Page Responsive styles - begin
+   ========================================================================== */
+
+@media only screen and (min-width: $ipad-landscape-plus-pixel) and (max-width: $laptop-landscape) {
+    
+    .qodef-woo-single-page {
+        
+        .woocommerce-tabs {
+            
+            ul.tabs {
+                
+                > li {
+                    
+                    a {
+                        padding: 12px 7px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include ipad-landscape {
+    
+    .qodef-woo-single-page {
+        
+        .qodef-single-product-content {
+            
+            .images,
+            .qodef-single-product-summary {
+                float: none;
+                width: 100%;
+                padding: 0;
+            }
+	        
+	        .images {
+		
+		        .woocommerce-product-gallery__trigger {
+			        right: 10px;
+		        }
+	        }
+            
+            .qodef-single-product-summary {
+                margin: 30px 0 0;
+            }
+        }
+        
+        .woocommerce-tabs {
+            
+            ul.tabs {
+                
+                > li {
+                    
+                    a {
+                        padding: 13px 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include phone-landscape {
+    
+    .qodef-woo-single-page {
+	
+	    &.qodef-woo-single-thumb-on-left-side {
+		
+		    .qodef-single-product-content {
+			
+			    .images {
+				
+				    &.woocommerce-product-gallery--columns-4 {
+					
+					    .woocommerce-product-gallery__image {
+						
+						    &:not(:first-child) {
+							    width: 50%;
+						    }
+					    }
+				    }
+			    }
+		    }
+	    }
+        
+        .qodef-single-product-content {
+            
+            .images {
+    
+                &.woocommerce-product-gallery--columns-4 {
+        
+                    .woocommerce-product-gallery__image {
+            
+                        &:not(:first-child) {
+	                        width: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Single Product Page Responsive styles - end
+   ========================================================================== */

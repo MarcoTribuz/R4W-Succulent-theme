@@ -1,0 +1,24 @@
+[09-Oct-2022 19:44:38 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function succulents_qodef_get_content_sidebar_class() in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php on line 2
+[08-Nov-2022 16:59:11 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function succulents_qodef_get_content_sidebar_class() in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php on line 2
+[07-Feb-2023 00:27:28 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function succulents_qodef_get_content_sidebar_class() in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php on line 2
+[10-Feb-2023 10:23:46 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function succulents_qodef_get_content_sidebar_class() in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php on line 2
+[06-Mar-2023 20:27:25 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function succulents_qodef_get_content_sidebar_class() in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php on line 2
+[07-Apr-2023 20:30:03 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function succulents_qodef_get_content_sidebar_class() in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/recipfh8/public_html/wp-content/themes/succulents/framework/modules/search/templates/holder.php on line 2

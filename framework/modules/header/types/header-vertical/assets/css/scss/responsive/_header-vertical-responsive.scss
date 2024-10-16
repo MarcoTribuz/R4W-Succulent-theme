@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Header Vertical responsive style - begin
+   ========================================================================== */
+
+@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+	
+	.error404.qodef-header-vertical .qodef-content {
+		margin: 0 !important;
+	}
+}
+
+@include ipad-landscape {
+	
+	.qodef-header-vertical {
+		
+		.qodef-vertical-menu-area {
+			display: none;
+		}
+		
+		.qodef-content,
+		footer {
+			padding-left: 0;
+		}
+	}
+}
+
+.qodef-header-vertical {
+	
+	.qodef-grid,
+	.qodef-container-inner,
+	.qodef-row-grid-section {
+		
+		@include laptop-landscape-large {
+			width: $grid-width-laptop-landscape;
+		}
+		
+		@include laptop-landscape {
+			width: $grid-width-ipad-landscape;
+		}
+		
+		@include ipad-landscape {
+			width: $grid-width-ipad-landscape;
+		}
+		
+		@include ipad-portrait {
+			width: $grid-width-ipad-portrait;
+		}
+		
+		@include phone-landscape {
+			width: $grid-width-phone-landscape;
+		}
+		
+		@include phone-portrait {
+			width: $grid-width-phone-portrait;
+		}
+		
+		@include smaller-phone-portrait {
+			width: $grid-width-smaller-phone-portrait;
+		}
+	}
+}
+/* ==========================================================================
+   Header Vertical responsive style - end
+   ========================================================================== */

@@ -1,0 +1,263 @@
+/* ==========================================================================
+   Product List shortcode styles - begin
+   ========================================================================== */
+
+.qodef-pl-holder {
+    @include qodefRelativeHolderLayout();
+
+    .qodef-pli {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        padding: 0;
+        z-index: 100;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        &:hover{
+            .qodef-pli-price {
+                opacity:0;
+                @include qodefTransform(translate3d(15%,0,0));
+            }
+            .qodef-pli-add-to-cart {
+                a{  
+                    opacity:1;
+                    @include qodefTransform(translate3d(0,-50%,0));
+                }
+            }
+        }
+
+	    .qodef-pli-title {
+		    margin: 0 0 11px;
+	    }
+	
+	    .qodef-pli-category {
+		    margin: 0 0 9px;
+		    a {
+			    color: #afafaf;
+			    &:hover {
+				    color: $first-main-color;
+			    }
+		    }
+	    }
+
+        .qodef-pli-excerpt {
+            color: $default-heading-color;
+	        line-height: 1.3em;
+            margin: 11px 0 3px;
+        }
+
+	    .qodef-pli-rating-holder {
+		    @include qodefRelativeHolderLayout();
+		    line-height: 1;
+		    margin: 10px 0 3px;
+	    }
+
+	    .qodef-pli-rating {
+		    @include qodefWooCommerceRatingsStyle();
+	    }
+
+        .qodef-pli-price-wrapper{
+            position: relative;
+	        margin-bottom: 12px;
+        }
+
+        .qodef-pli-price {
+            @include qodefWooCommercePriceStyle();
+            margin: 0;
+            font-size: 23px;
+            line-height: 1.1em;
+            font-family: $default-heading-font;
+            font-weight: 700;
+            letter-spacing: -.02em;
+            color: $first-main-color;
+            @include qodefTransform(translate3d(0,0,0));
+            @include qodefTransition(all .4s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+        }
+
+
+        .qodef-pli-add-to-cart{
+            a{
+                margin: 0;
+                width: 100%;
+                font-size: 15px;
+                font-family: $default-heading-font;
+                color: $first-main-color;
+                letter-spacing: 0;
+                font-weight: 700;
+                background-color: transparent;
+                padding: 0;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                line-height: 1;
+                text-transform: lowercase;
+                opacity:0;
+                @include qodefTransform(translate3d(-15%,-50%,0));
+                @include qodefTransition(all .4s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+
+                &:hover{
+                    background-color: transparent;
+                    color: $first-main-color;
+                }
+
+                &.added{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .qodef-pli-inner {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+
+        &:hover {
+
+            .qodef-pli-text {
+                opacity: 1;
+            }
+        }
+
+        .touch & {
+            cursor: pointer;
+        }
+
+        .qodef-pli-image {
+            @include qodefRelativeHolderLayout();
+
+            img {
+                display: block;
+                width: 100%;
+            }
+
+            .qodef-pli-onsale,
+            .qodef-pli-out-of-stock,
+            .qodef-pli-new-product {
+	            @include qodefWooCommerceMarksGeneralStyle();
+            }
+
+            .qodef-pli-onsale {
+	            @include qodefWooCommerceSaleStyle();
+            }
+
+            .qodef-pli-out-of-stock {
+	            @include qodefWooCommerceOutOfStockStyle();
+            }
+	
+	        .qodef-pli-new-product {
+		        @include qodefWooCommerceNewProductStyle();
+	        }
+        }
+            
+        .qodef-pli-text {
+            @include qodefAbsoluteHolderLayout();
+            padding: 10px;
+            opacity: 0;
+            background-color: rgba($default-heading-color, 0.6);
+            box-sizing: border-box;
+            @include qodefTransition(opacity .4s cubic-bezier(0.48, 0.19, 0.2, 0.86));
+        }
+
+        .qodef-pli-text-outer {
+	        @include qodefTableLayout();
+	        text-align: center;
+        }
+
+        .qodef-pli-text-inner {
+            @include qodefTableCellLayout();
+
+            .qodef-pli-title,
+            .qodef-pli-category a,
+            .qodef-pli-excerpt,
+            .qodef-pli-rating,
+            .qodef-pli-price {
+                color: #fff;
+            }
+	
+	        .qodef-pli-category a:hover {
+		        color: rgba(#fff, .8);
+	        }
+
+            .qodef-pli-add-to-cart {
+                .button,
+                .added_to_cart {
+                    @include qodefButtonDefaultStyle();
+                    @include qodefButtonMediumParams();
+                    @include qodefButtonSolidColor();
+                    &:hover {
+                        @include qodefButtonSolidHoverColor();
+                    }
+                    white-space: nowrap;
+                    z-index: 3;
+                }
+
+                .button.added {
+                    display: none;
+                }
+            }
+        }
+
+	    .qodef-pli-link {
+		    @include qodefAbsoluteHolderLayout();
+	    }
+    }
+
+    .qodef-pli-text-wrapper {
+        @include qodefRelativeHolderLayout();
+        margin: 0;
+        text-align: center;
+    }
+	
+	/*************** Standard Layout - begin ***************/
+	
+	&.qodef-standard-layout {
+		
+		.qodef-pli {
+			float: left;
+		}
+		
+		&.qodef-large-space {
+			margin: 0 0 -50px;
+		}
+		
+		&.qodef-normal-space {
+			margin: 0 0 -30px;
+		}
+		
+		&.qodef-small-space {
+			margin: 0 0 -20px;
+		}
+		
+		&.qodef-tiny-space {
+			margin: 0 0 -10px;
+		}
+		
+		$standard_list_columns: ('two', 'three', 'four', 'five', 'six');
+		
+		@for $i from 0 to length($standard_list_columns) {
+			&.qodef-#{nth($standard_list_columns,$i+1)}-columns {
+				$column_width: 100%/($i+2);
+				
+				.qodef-pli {
+					width: $column_width;
+					
+					@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	/*************** Standard Layout - end ***************/
+}
+/* ==========================================================================
+   Product List shortcode styles - end
+   ========================================================================== */

@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Blog List shortcode - Minimal type style - begin
+   ========================================================================== */
+
+.qodef-blog-list-holder {
+    
+    &.qodef-bl-minimal {
+
+        .qodef-post-title{
+            margin: 0 0 10px;
+        }
+        
+        .qodef-post-info-date {
+            display: block;
+            margin: 0 0 12px;
+            line-height: 1;
+            
+            a {
+                font-size: 13px;
+                color: $default-text-color;
+                
+                &:hover {
+                    color: $default-heading-color;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List shortcode - Minimal type style - end
+   ========================================================================== */
